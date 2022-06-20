@@ -1,0 +1,23 @@
+﻿@model CagriHizmetleri.Models.CagriOperatorleri
+@{
+    ViewData["Title"] = "CalisanGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Cagri", FormMethod.Post))
+{
+    <b>ID:</b>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <b>Adı:</b>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <b>Soyadı: </b>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-info">Çalışanı Güncelle</button>
+
+    <a href="@Url.Action("Index","Home")" class="btn btn-warning" style="color:#ffffff">Vazgeç</a>
+
+}

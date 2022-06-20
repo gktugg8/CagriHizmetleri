@@ -1,0 +1,45 @@
+﻿@using CagriHizmetleri.Models;
+@model List<Musteriler>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Müşteriler Listesi</h2>
+<br />
+<table class="table table-dark">
+    <tr>
+
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Mail</th>
+        <th>Telefon</th>
+        <th>Sorun</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.Mail</td>
+            <td>@x.Telefon</td>
+            <td>@x.Sorun</td>
+
+            
+            <td>
+                <a href="/Musteri/Sil/@x.ID" class="btn btn-danger">Sil</a>
+                <a href="/Musteri/MusteriGetir/@x.ID" class="btn btn-success">Güncelle</a>
+               
+
+
+
+
+            </td>
+
+        </tr>
+
+    }
+</table>
+<a href="/Musteri/Ekle/" class="btn btn-primary">Müşteri Ekle</a>
+<a href="@Url.Action("Index","Home")" class="btn btn-warning" style="color:#ffffff">Ana Sayfa</a>

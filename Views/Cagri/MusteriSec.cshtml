@@ -1,0 +1,16 @@
+﻿@model CagriHizmetleri.Models.CagriOperatorleri
+@{
+    ViewData["Title"] = "MusteriSec";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <b>Ad:</b>
+    @Html.DropDownListFor(x => x.musteri.ID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+   
+    <button class="btn btn-info">Musteri Seç</button>
+    <a href="@Url.Action("Index","Musteri")" class="btn btn-warning" style="color:#ffffff">Vazgeç</a>
+</form>
+

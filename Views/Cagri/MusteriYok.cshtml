@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "MusteriYok";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşterisi Olmayan Personel Listesi</h2>
+<br />
+<table class="table table-dark">
+    <tr>
+
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Musteri</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            
+
+
+
+            <td>
+                <a href="/Cagri/Sil/@x.ID" class="btn btn-danger">Sil</a>
+                <a href="/Cagri/CalisanGetir/@x.ID" class="btn btn-success">Güncelle</a>
+                <a href="/Cagri/MusteriSec/@x.ID" class="btn btn-light">Müşteri Ekle</a>
+
+
+
+
+
+            </td>
+
+        </tr>
+
+    }
+</table>
+<a href="@Url.Action("Index","Home")" class="btn btn-warning" style="color:#ffffff">Vazgeç</a>
+

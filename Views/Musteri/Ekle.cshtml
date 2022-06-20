@@ -1,0 +1,30 @@
+﻿@model CagriHizmetleri.Models.Musteriler
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <b>Ad:</b>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <b>Soyad:</b>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <b>Mail:</b>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <b>Telefon:</b>
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    <b>Sorun:</b>
+    @Html.TextBoxFor(x => x.Sorun, new { @class = "form-control" })
+    <br />
+
+
+
+
+    <button class="btn btn-info">Kişi Ekle</button>
+    <a href="@Url.Action("Index","Musteri")" class="btn btn-danger" style="color:#ffffff">Vazgeç</a>
+</form>
+

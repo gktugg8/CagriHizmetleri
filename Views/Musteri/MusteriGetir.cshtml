@@ -1,0 +1,32 @@
+﻿@model CagriHizmetleri.Models.Musteriler
+@{
+    ViewData["Title"] = "MusteriGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <b>ID:</b>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <b>Adı:</b>
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    <b>Soyadı: </b>
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+    <br />
+    <b>Mail: </b>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <b>Telefon: </b>
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    <b>Sorun: </b>
+    @Html.TextBoxFor(x => x.Sorun, new { @class = "form-control" })
+    
+
+}
+<br />
+<button class="btn btn-info">Kişiyi Güncelle</button>
+<a href="@Url.Action("Index","Musteri")" class="btn btn-danger">Geri Dön</a>
+
